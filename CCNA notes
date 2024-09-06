@@ -1,0 +1,56 @@
+CSMA/CD - listen the wire to make sure that no other station is transmiting, if no other station is transmiting the station transmit
+	-> if a collision occurs, the transmitting stations detect the collision and run a random backoff alghorithm, to wait a random time before retransmit
+
+
+UTP Cable - Max 100m 
+	-> straight-through - uses pins 1,2,3 and 6 not crossed
+	-> crossover - in cat5 1 and 3 are switched and 2 and 6 are switched in one end of the cable
+	-> cat1 - tele
+	-> cat2 - 4mb
+	-> cat3 - 10mb
+	-> cat4 - 16mb
+	-> cat5 - 100mb
+	-> cat5e - 1gb
+	-> cat6e - 10gb
+
+Fiber
+	-> MMF - supports shorter distances than SMF, MMF could use led
+
+MAC
+	-> Layer 2 address
+	-> Hexadecimal format
+	-> 48 bits - 24 for the vendor(OUI) - 24 for the identifie
+	-> is discovered via ARP
+
+Switch
+	-> Uses Mac Address table - is construct by the source mac that pass into the switch
+	-> Uses transparent brdging flooding - Learning, Flooding, Filtering,Forwarding,Aging
+	-> Transparent bridging flooding - if the switch dont know the mac, flood for all ports except from the source port
+	-> Aging = mark in the mac table
+	-> Forwarding = switch has the destination in mac table
+	-> Filtering = host and destination reside on the same itnerface, the switch discard the frame
+	-> Flooding = flood to all ports to delivery the frame
+	-> Learn = learn the mac from source
+	-> Replace a hub with a switch eliminates collision, because each port is separete collision domain, eliminate the need of CSMA/CD
+
+Duplex
+	-> If 2 interfaces have full duplex activated, device can send and receive at same time, dont have collision
+	-> Double the amount of bandwidth
+	-> To view the duplex and speed in cisco cli, you need to do the command, show interface [INTERFACE]
+	-> Duplex mismatch causes slowly and collisions (one device in full and other in half-duplex)
+	-> Cyclic redundancy checks errors usually indicate a problem with the net cable
+
+errDisable
+
+	-> EtherChannel misconfiguration.
+	-> Duplex mismatch.
+    	-> Bridge protocol data unit (BPDU) port guard has been enabled on the port.
+    	-> Unidirectional Link Detection (UDLD).
+   	-> A native VLAN mismatch.
+
+Runts
+	-> Runts are frames smaller than 64 bytes with a bad frame check sequence (FCS)
+	-> Bad cabling or inconsistent duplex settings usually cause runts.
+
+
+
